@@ -15,7 +15,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LottoMachine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -25,17 +24,27 @@
                                 <rect key="frame" x="0.0" y="646.33333333333337" width="414" height="89.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7u-2Y-Q8N">
-                                        <rect key="frame" x="159.66666666666666" y="21" width="95" height="48"/>
+                                        <rect key="frame" x="73.333333333333329" y="21" width="67.999999999999986" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="drawAll"/>
+                                        <state key="normal" title="Draw"/>
                                         <connections>
                                             <action selector="drawAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qdd-TX-Ntd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXv-5H-Vd3">
+                                        <rect key="frame" x="270.33333333333331" y="21" width="74" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AKV-rA-toP"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="X7u-2Y-Q8N" firstAttribute="centerX" secondItem="cpm-4D-KhO" secondAttribute="centerX" id="WXz-he-9TA"/>
+                                    <constraint firstItem="jXv-5H-Vd3" firstAttribute="centerX" secondItem="cpm-4D-KhO" secondAttribute="centerX" constant="100" id="CVA-kc-oeG"/>
+                                    <constraint firstItem="X7u-2Y-Q8N" firstAttribute="centerX" secondItem="cpm-4D-KhO" secondAttribute="centerX" constant="-100" id="WXz-he-9TA"/>
+                                    <constraint firstItem="jXv-5H-Vd3" firstAttribute="centerY" secondItem="cpm-4D-KhO" secondAttribute="centerY" id="gN0-yR-wMT"/>
                                     <constraint firstItem="X7u-2Y-Q8N" firstAttribute="centerY" secondItem="cpm-4D-KhO" secondAttribute="centerY" id="nS6-9W-Doc"/>
                                 </constraints>
                             </view>
@@ -172,6 +181,7 @@
                         <outlet property="silverLabel" destination="FlX-kO-GSD" id="zQv-0J-pPV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="132.88043478260872"/>
         </scene>

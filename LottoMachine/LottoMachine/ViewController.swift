@@ -20,12 +20,16 @@ class ViewController: UIViewController {
     
     private var numberArray = [Int]()
     private var drawedNumberArray = [Int]()
+    private var timer = Timer()
+    private var count = [1,5,24,9,40,33]
+    private var isTimerRunning = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNumberArray()
         setDrawedArray()
+        setTimer()
     }
     
     func setNumberArray() {
@@ -33,6 +37,14 @@ class ViewController: UIViewController {
         for i in 1...45 {
             numberArray.append(i)
         }
+    }
+    
+    func setTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        animation()
     }
     
     func setDrawedArray() {
@@ -57,47 +69,46 @@ class ViewController: UIViewController {
         }
         drawedNumberArray.sort()
     }
-    func setfadeOutnAnimation() {
-        goldLabel.alpha = 0.0
-        greenLabel.alpha = 0.0
-        silverLabel.alpha = 0.0
-        redLabel.alpha = 0.0
-        blueLabel.alpha = 0.0
-        purpleLabel.alpha = 0.0
-    }
-    func fadeInAnimation() {
-        UIView.animate(withDuration: 1, animations:  {
-            self.goldLabel.alpha = 1.0
-        })
-        UIView.animate(withDuration: 2, animations:  {
-            self.greenLabel.alpha = 1.0
-        })
-        UIView.animate(withDuration: 3, animations:  {
-            self.silverLabel.alpha = 1.0
-        })
-        UIView.animate(withDuration: 4, animations:  {
-            self.redLabel.alpha = 1.0
-        })
-        UIView.animate(withDuration: 5, animations:  {
-            self.blueLabel.alpha = 1.0
-        })
-        UIView.animate(withDuration: 6, animations:  {
-            self.purpleLabel.alpha = 1.0
-        })
-
+    
+    func animation() {
+        for i in 0...5 {
+            if count[i] == 46 {
+                count[i] = 1
+            }
+        }
+        goldLabel.text = "\(count[0])"
+        greenLabel.text = "\(count[1])"
+        silverLabel.text = "\(count[2])"
+        redLabel.text = "\(count[3])"
+        blueLabel.text = "\(count[4])"
+        purpleLabel.text = "\(count[5])"
+        
+        for i in 0...5 {
+            count[i] += 1
+        }
+        
     }
     
     @IBAction func drawAll(_ sender: Any) {
-        drawAll()
-        goldLabel.text = "\(drawedNumberArray[0])"
-        greenLabel.text = "\(drawedNumberArray[1])"
-        silverLabel.text = "\(drawedNumberArray[2])"
-        redLabel.text = "\(drawedNumberArray[3])"
-        blueLabel.text = "\(drawedNumberArray[4])"
-        purpleLabel.text = "\(drawedNumberArray[5])"
-        setfadeOutnAnimation()
-        fadeInAnimation()
+        if isTimerRunning == true {
+            drawAll()
+            timer.invalidate()
+            goldLabel.text = "\(drawedNumberArray[0])"
+            greenLabel.text = "\(drawedNumberArray[1])"
+            silverLabel.text = "\(drawedNumberArray[2])"
+            redLabel.text = "\(drawedNumberArray[3])"
+            blueLabel.text = "\(drawedNumberArray[4])"
+            purpleLabel.text = "\(drawedNumberArray[5])"
+            isTimerRunning = false
+        }
         
+        
+    }
+    @IBAction func reset(_ sender: Any) {
+        if isTimerRunning == false {
+            setTimer()
+            isTimerRunning = true
+        }
     }
     
 }
