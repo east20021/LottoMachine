@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var silverLabel: UILabel!
@@ -28,7 +27,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNumberArray()
-        setDrawedArray()
         setTimer()
     }
     
@@ -101,8 +99,6 @@ class ViewController: UIViewController {
             purpleLabel.text = "\(drawedNumberArray[5])"
             isTimerRunning = false
         }
-        
-        
     }
     @IBAction func reset(_ sender: Any) {
         if isTimerRunning == false {

@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B9716C7A36E0BF2A87E4F07 /* Pods_LottoMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A543AAD3BEACC2E87705B307 /* Pods_LottoMachine.framework */; };
 		9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A82201A00C500359D55 /* AppDelegate.swift */; };
 		9BA02A85201A00C500359D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A84201A00C500359D55 /* ViewController.swift */; };
 		9BA02A88201A00C500359D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A86201A00C500359D55 /* Main.storyboard */; };
 		9BA02A8A201A00C500359D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A89201A00C500359D55 /* Assets.xcassets */; };
 		9BA02A8D201A00C500359D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A8B201A00C500359D55 /* LaunchScreen.storyboard */; };
+		9BF283C6202F4F3900730DC6 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C5202F4F3900730DC6 /* Number.swift */; };
+		9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C7202F51B100730DC6 /* NumberManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74C10D9F81A4DFCEDB27C49C /* Pods-LottoMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LottoMachine.release.xcconfig"; path = "Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine.release.xcconfig"; sourceTree = "<group>"; };
 		9BA02A7F201A00C500359D55 /* LottoMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LottoMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA02A82201A00C500359D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BA02A84201A00C500359D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,10 @@
 		9BA02A89201A00C500359D55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA02A8C201A00C500359D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BA02A8E201A00C500359D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF283C5202F4F3900730DC6 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		9BF283C7202F51B100730DC6 /* NumberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberManager.swift; sourceTree = "<group>"; };
+		9DECEF3BDDF37B43D767F8F6 /* Pods-LottoMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LottoMachine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine.debug.xcconfig"; sourceTree = "<group>"; };
+		A543AAD3BEACC2E87705B307 /* Pods_LottoMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LottoMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B9716C7A36E0BF2A87E4F07 /* Pods_LottoMachine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		423EEA42B73485FD4D377F5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A543AAD3BEACC2E87705B307 /* Pods_LottoMachine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EF494C5D448027D736A3BDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DECEF3BDDF37B43D767F8F6 /* Pods-LottoMachine.debug.xcconfig */,
+				74C10D9F81A4DFCEDB27C49C /* Pods-LottoMachine.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9BA02A76201A00C500359D55 = {
 			isa = PBXGroup;
 			children = (
 				9BA02A81201A00C500359D55 /* LottoMachine */,
 				9BA02A80201A00C500359D55 /* Products */,
+				6EF494C5D448027D736A3BDF /* Pods */,
+				423EEA42B73485FD4D377F5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +88,8 @@
 				9BA02A89201A00C500359D55 /* Assets.xcassets */,
 				9BA02A8B201A00C500359D55 /* LaunchScreen.storyboard */,
 				9BA02A8E201A00C500359D55 /* Info.plist */,
+				9BF283C5202F4F3900730DC6 /* Number.swift */,
+				9BF283C7202F51B100730DC6 /* NumberManager.swift */,
 			);
 			path = LottoMachine;
 			sourceTree = "<group>";
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BA02A91201A00C500359D55 /* Build configuration list for PBXNativeTarget "LottoMachine" */;
 			buildPhases = (
+				922CF3FE38745E169BB290E5 /* [CP] Check Pods Manifest.lock */,
 				9BA02A7B201A00C500359D55 /* Sources */,
 				9BA02A7C201A00C500359D55 /* Frameworks */,
 				9BA02A7D201A00C500359D55 /* Resources */,
+				332D3C02DBA0F15BECE2DAD8 /* [CP] Embed Pods Frameworks */,
+				1CDAF5CD3947FF210D79790E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +164,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CDAF5CD3947FF210D79790E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		332D3C02DBA0F15BECE2DAD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		922CF3FE38745E169BB290E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LottoMachine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9BA02A7B201A00C500359D55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +227,8 @@
 			files = (
 				9BA02A85201A00C500359D55 /* ViewController.swift in Sources */,
 				9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */,
+				9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */,
+				9BF283C6202F4F3900730DC6 /* Number.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +363,7 @@
 		};
 		9BA02A92201A00C500359D55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DECEF3BDDF37B43D767F8F6 /* Pods-LottoMachine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +379,7 @@
 		};
 		9BA02A93201A00C500359D55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74C10D9F81A4DFCEDB27C49C /* Pods-LottoMachine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
