@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 class Number: Object {
-    @objc dynamic var number = 0
+    @objc dynamic var lottoNum: String = ""
 }

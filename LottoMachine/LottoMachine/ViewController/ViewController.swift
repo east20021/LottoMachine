@@ -16,18 +16,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueLabel: UILabel!
     @IBOutlet weak var purpleLabel: UILabel!
     @IBOutlet weak var goldLabel: UILabel!
+    @IBOutlet weak var statusBar: UIView!
+    @IBOutlet weak var buttonSetView: UIView!
+    @IBOutlet weak var lottoLabel: UILabel!
     
     private var numberArray = [Int]()
     private var drawedNumberArray = [Int]()
     private var timer = Timer()
     private var count = [1,5,24,9,40,33]
     private var isTimerRunning = true
+    private var numberManager = NumberManager()
+    
+    private var num = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNumberArray()
-        setTimer()
+        self.setThema()
+        self.setNumberArray()
+        self.setTimer()
+        
+          print(NSHomeDirectory())
+    }
+    
+    func setThema() {
+        let hex = "50E3C2"
+        self.statusBar.backgroundColor = UIColor(hex: hex)
+        self.buttonSetView.backgroundColor = UIColor(hex: hex)
+        self.lottoLabel.textColor = UIColor(hex: hex)
     }
     
     func setNumberArray() {
@@ -51,9 +67,7 @@ class ViewController: UIViewController {
     
     func drawNumber() -> Int {
         let number = UInt32(numberArray.count)
-        print("num :",number)
         let drawNum = Int(arc4random_uniform(number))
-        print("draw :",drawNum)
         let saveNumber = numberArray[drawNum]
         numberArray.remove(at: drawNum)
         return saveNumber
@@ -87,6 +101,7 @@ class ViewController: UIViewController {
         
     }
     
+    
     @IBAction func drawAll(_ sender: Any) {
         if isTimerRunning == true {
             drawAll()
@@ -105,6 +120,19 @@ class ViewController: UIViewController {
             setTimer()
             isTimerRunning = true
         }
+    }
+    @IBAction func save(_ sender: Any) {
+        for i in 0...5 {
+            if i == 5 {
+                num += String(drawedNumberArray[i])
+            } else {
+                num += String(drawedNumberArray[i])
+                num += "    "
+            }
+        }
+        let number = Number()
+        number.lottoNum = num
+        numberManager.save(objc: number)
     }
     
 }

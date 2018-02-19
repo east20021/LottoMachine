@@ -15,6 +15,8 @@
 		9BA02A8D201A00C500359D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A8B201A00C500359D55 /* LaunchScreen.storyboard */; };
 		9BF283C6202F4F3900730DC6 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C5202F4F3900730DC6 /* Number.swift */; };
 		9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C7202F51B100730DC6 /* NumberManager.swift */; };
+		9BF283CB2031654400730DC6 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283CA2031654400730DC6 /* ColorHex.swift */; };
+		9BF2840F203AD85E00730DC6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2840E203AD85E00730DC6 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9BA02A8E201A00C500359D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF283C5202F4F3900730DC6 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
 		9BF283C7202F51B100730DC6 /* NumberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberManager.swift; sourceTree = "<group>"; };
+		9BF283CA2031654400730DC6 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		9BF2840E203AD85E00730DC6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9DECEF3BDDF37B43D767F8F6 /* Pods-LottoMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LottoMachine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine.debug.xcconfig"; sourceTree = "<group>"; };
 		A543AAD3BEACC2E87705B307 /* Pods_LottoMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LottoMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -82,16 +86,50 @@
 		9BA02A81201A00C500359D55 /* LottoMachine */ = {
 			isa = PBXGroup;
 			children = (
+				9BF28413203ADA0400730DC6 /* Extention */,
+				9BF28412203AD9F400730DC6 /* ViewController */,
+				9BF28411203AD9EC00730DC6 /* Manager */,
+				9BF28410203AD9E500730DC6 /* Model */,
 				9BA02A82201A00C500359D55 /* AppDelegate.swift */,
-				9BA02A84201A00C500359D55 /* ViewController.swift */,
 				9BA02A86201A00C500359D55 /* Main.storyboard */,
 				9BA02A89201A00C500359D55 /* Assets.xcassets */,
 				9BA02A8B201A00C500359D55 /* LaunchScreen.storyboard */,
 				9BA02A8E201A00C500359D55 /* Info.plist */,
-				9BF283C5202F4F3900730DC6 /* Number.swift */,
-				9BF283C7202F51B100730DC6 /* NumberManager.swift */,
 			);
 			path = LottoMachine;
+			sourceTree = "<group>";
+		};
+		9BF28410203AD9E500730DC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9BF283C5202F4F3900730DC6 /* Number.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BF28411203AD9EC00730DC6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9BF283C7202F51B100730DC6 /* NumberManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9BF28412203AD9F400730DC6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9BA02A84201A00C500359D55 /* ViewController.swift */,
+				9BF2840E203AD85E00730DC6 /* ListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9BF28413203ADA0400730DC6 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				9BF283CA2031654400730DC6 /* ColorHex.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA02A85201A00C500359D55 /* ViewController.swift in Sources */,
+				9BF283CB2031654400730DC6 /* ColorHex.swift in Sources */,
+				9BF2840F203AD85E00730DC6 /* ListViewController.swift in Sources */,
 				9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */,
 				9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */,
 				9BF283C6202F4F3900730DC6 /* Number.swift in Sources */,
@@ -373,7 +413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smith.codesquad.LottoMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -389,7 +429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = smith.codesquad.LottoMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
