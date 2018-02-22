@@ -92,6 +92,12 @@ class ViewController: UIViewController {
         
     }
     
+    func alert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func drawAll(_ sender: Any) {
         if isTimerRunning == true {
             drawAll()
@@ -127,7 +133,7 @@ class ViewController: UIViewController {
         number.lottoNum = num
         numberManager.save(objc: number)
         num = ""
+        self.alert(title: "저장되었습니다", message:"" )
     }
-    
 }
 
