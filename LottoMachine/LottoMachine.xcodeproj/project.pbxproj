@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B9716C7A36E0BF2A87E4F07 /* Pods_LottoMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A543AAD3BEACC2E87705B307 /* Pods_LottoMachine.framework */; };
+		9B465224203F094600E364FB /* ThemaColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B465223203F094600E364FB /* ThemaColorManager.swift */; };
 		9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A82201A00C500359D55 /* AppDelegate.swift */; };
 		9BA02A85201A00C500359D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A84201A00C500359D55 /* ViewController.swift */; };
 		9BA02A88201A00C500359D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A86201A00C500359D55 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		74C10D9F81A4DFCEDB27C49C /* Pods-LottoMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LottoMachine.release.xcconfig"; path = "Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine.release.xcconfig"; sourceTree = "<group>"; };
+		9B465223203F094600E364FB /* ThemaColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaColorManager.swift; sourceTree = "<group>"; };
 		9BA02A7F201A00C500359D55 /* LottoMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LottoMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA02A82201A00C500359D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BA02A84201A00C500359D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF283C7202F51B100730DC6 /* NumberManager.swift */,
+				9B465223203F094600E364FB /* ThemaColorManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */,
 				9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */,
 				9BF283C6202F4F3900730DC6 /* Number.swift in Sources */,
+				9B465224203F094600E364FB /* ThemaColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,6 @@ class ListViewController: UIViewController {
         
         setRealm()
 
-      
     }
     
     func setRealm() {

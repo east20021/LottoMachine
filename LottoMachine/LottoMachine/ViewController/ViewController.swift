@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueLabel: UILabel!
     @IBOutlet weak var purpleLabel: UILabel!
     @IBOutlet weak var goldLabel: UILabel!
+    
     @IBOutlet weak var statusBar: UIView!
-    @IBOutlet weak var buttonSetView: UIView!
+    @IBOutlet weak var boundaryView: UIView!
     @IBOutlet weak var lottoLabel: UILabel!
     
     private var numberArray = [Int]()
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
     private var count = [1,5,24,9,40,33]
     private var isTimerRunning = true
     private var numberManager = NumberManager()
+    private let themaColor = ThemaColorManager()
     
     private var num = ""
     
@@ -36,13 +38,14 @@ class ViewController: UIViewController {
         self.setNumberArray()
         self.setTimer()
         
-          print(NSHomeDirectory())
+        print(NSHomeDirectory())
+        
     }
     
     func setThema() {
-        let hex = "50E3C2"
+        let hex = themaColor.hex
         self.statusBar.backgroundColor = UIColor(hex: hex)
-        self.buttonSetView.backgroundColor = UIColor(hex: hex)
+        self.boundaryView.backgroundColor = UIColor(hex: hex)
         self.lottoLabel.textColor = UIColor(hex: hex)
     }
     
@@ -121,6 +124,7 @@ class ViewController: UIViewController {
             isTimerRunning = true
         }
     }
+    
     @IBAction func save(_ sender: Any) {
         for i in 0...5 {
             if i == 5 {
