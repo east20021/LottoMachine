@@ -11,21 +11,19 @@ import RealmSwift
 
 class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var statusBar: UIView!
     
     private var realm: Realm!
     private var contentsList: Results<Number>!
     
     private var numberManager = NumberManager()
+    private let themaColor = ThemaColorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let width = (view.frame.size.width)
-        let height = (view.frame.size.height) / 6
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: height)
-        
         setRealm()
-
+        setThema()
+        setFlowLayout()
     }
     
     func setRealm() {
@@ -35,6 +33,23 @@ class ListViewController: UIViewController {
             print("\(error)")
         }
         contentsList = numberManager.getNumbers(type: Number.self)
+    }
+    
+    func setThema() {
+        let hex = themaColor.hex
+        self.statusBar.backgroundColor = UIColor(hex: hex)
+        self.collectionView.backgroundColor = UIColor(hex: hex)
+    }
+    
+    func setFlowLayout() {
+        let width = (view.frame.size.width)
+        let height = (view.frame.size.height) / 6
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: height)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
