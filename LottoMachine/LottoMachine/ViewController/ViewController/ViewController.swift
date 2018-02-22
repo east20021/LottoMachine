@@ -63,11 +63,11 @@ class ViewController: UIViewController {
     
     func drawAll() {
         var numArr = numberArray
-        drawedNumberArray = [Int]()
+        drawedNumberArray = []
         for _ in 1...6 {
             let number = UInt32(numArr.count)
             let drawNum = Int(arc4random_uniform(number))
-            drawedNumberArray.append(numberArray.remove(at: drawNum))
+            drawedNumberArray.append(numArr.remove(at: drawNum))
         }
         drawedNumberArray.sort()
     }
