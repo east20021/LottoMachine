@@ -19,13 +19,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var statusBar: UIView!
     @IBOutlet weak var boundaryView: UIView!
-    @IBOutlet weak var lottoLabel: UILabel!
+    
+    private var timer = Timer()
     
     private var numberArray = [Int]()
     private var drawedNumberArray = [Int]()
-    private var timer = Timer()
+    
     private var count = [1,5,24,9,40,33]
     private var isTimerRunning = true
+    
     private var numberManager = NumberManager()
     private let themaColor = ThemaColorManager()
     
@@ -35,8 +37,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setThema()
-        self.setNumberArray()
         self.setTimer()
+        
+        for i in 1...45 {
+            numberArray.append(i)
+        }
         
         print(NSHomeDirectory())
         
@@ -46,14 +51,6 @@ class ViewController: UIViewController {
         let hex = themaColor.hex
         self.statusBar.backgroundColor = UIColor(hex: hex)
         self.boundaryView.backgroundColor = UIColor(hex: hex)
-        self.lottoLabel.textColor = UIColor(hex: hex)
-    }
-    
-    func setNumberArray() {
-        numberArray = [Int]()
-        for i in 1...45 {
-            numberArray.append(i)
-        }
     }
     
     func setTimer() {
@@ -64,23 +61,13 @@ class ViewController: UIViewController {
         animation()
     }
     
-    func setDrawedArray() {
-        drawedNumberArray = [Int]()
-    }
-    
-    func drawNumber() -> Int {
-        let number = UInt32(numberArray.count)
-        let drawNum = Int(arc4random_uniform(number))
-        let saveNumber = numberArray[drawNum]
-        numberArray.remove(at: drawNum)
-        return saveNumber
-    }
-    
     func drawAll() {
-        setNumberArray()
-        setDrawedArray()
+        var numArr = numberArray
+        drawedNumberArray = [Int]()
         for _ in 1...6 {
-            drawedNumberArray.append(drawNumber())
+            let number = UInt32(numArr.count)
+            let drawNum = Int(arc4random_uniform(number))
+            drawedNumberArray.append(numberArray.remove(at: drawNum))
         }
         drawedNumberArray.sort()
     }
@@ -91,6 +78,7 @@ class ViewController: UIViewController {
                 count[i] = 1
             }
         }
+        
         goldLabel.text = "\(count[0])"
         greenLabel.text = "\(count[1])"
         silverLabel.text = "\(count[2])"
@@ -103,7 +91,6 @@ class ViewController: UIViewController {
         }
         
     }
-    
     
     @IBAction func drawAll(_ sender: Any) {
         if isTimerRunning == true {
@@ -118,11 +105,13 @@ class ViewController: UIViewController {
             isTimerRunning = false
         }
     }
+    
     @IBAction func reset(_ sender: Any) {
         if isTimerRunning == false {
             setTimer()
             isTimerRunning = true
         }
+        num = ""
     }
     
     @IBAction func save(_ sender: Any) {
@@ -137,6 +126,7 @@ class ViewController: UIViewController {
         let number = Number()
         number.lottoNum = num
         numberManager.save(objc: number)
+        num = ""
     }
     
 }
