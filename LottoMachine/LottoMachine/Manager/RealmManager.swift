@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class NumberManager {
+class RealmManager {
     let realm = try! Realm()
     
     func save(objc: Object) {

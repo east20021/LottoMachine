@@ -12,18 +12,28 @@ import RealmSwift
 class ListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var statusBar: UIView!
+    @IBOutlet weak var boundaryView: UIView!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var trashButton: UIButton!
     
     private var realm: Realm!
     private var contentsList: Results<Number>!
     
-    private var numberManager = NumberManager()
+    private var realmManager = RealmManager()
     private let themaColor = ThemaColorManager()
+    private var editStatus = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setRealm()
         setThema()
         setFlowLayout()
+        setEditing(editing: false)
+        
     }
     
     func setRealm() {
@@ -32,13 +42,14 @@ class ListViewController: UIViewController {
         } catch {
             print("\(error)")
         }
-        contentsList = numberManager.getNumbers(type: Number.self)
+        contentsList = realmManager.getNumbers(type: Number.self)
     }
     
     func setThema() {
         let hex = themaColor.hex
         self.statusBar.backgroundColor = UIColor(hex: hex)
         self.collectionView.backgroundColor = UIColor(hex: hex)
+        self.boundaryView.backgroundColor = UIColor(hex: hex)
     }
     
     func setFlowLayout() {
@@ -48,8 +59,55 @@ class ListViewController: UIViewController {
         layout.itemSize = CGSize(width: width, height: height)
     }
     
+    func setEditing(editing: Bool) {
+        editButton.isEnabled = !editing
+        editButton.isHidden = editing
+        
+        backButton.isEnabled = !editing
+        backButton.isHidden = editing
+        
+        doneButton.isEnabled = editing
+        doneButton.isHidden = !editing
+        
+        trashButton.isEnabled = editing
+        trashButton.isHidden = !editing
+        
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        if let selected = collectionView.indexPathsForSelectedItems {
+            let items = selected.map{$0.item}.sorted().reversed()
+            for item in items {
+                realmManager.delete(objc: contentsList[item])
+            }
+            collectionView.deleteItems(at: selected)
+        }
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+        editStatus = true
+        setEditing(editing: editStatus)
+        collectionView.allowsMultipleSelection = editStatus
+        let indexes = collectionView.indexPathsForVisibleItems
+        for index in indexes {
+            let cell = collectionView.cellForItem(at: index) as! CollectionViewCell
+            cell.isEditing = editStatus
+        }
+    }
+     
+    @IBAction func doneButton(_ sender: Any) {
+        editStatus = false
+        setEditing(editing: editStatus)
+        collectionView.allowsMultipleSelection = editStatus
+        let indexes = collectionView.indexPathsForVisibleItems
+        for index in indexes {
+            let cell = collectionView.cellForItem(at: index) as! CollectionViewCell
+            cell.isEditing = editStatus
+        }
     }
 }
 
@@ -60,11 +118,9 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
-        if let label = cell.viewWithTag(100) as? UILabel {
-            label.text = contentsList[indexPath.row].lottoNum
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        cell.lottoLabel.text = contentsList[indexPath.row].lottoNum
+        cell.isEditing = false
         return cell
     }
-    
 }

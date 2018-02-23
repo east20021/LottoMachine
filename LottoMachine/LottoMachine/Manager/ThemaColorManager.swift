@@ -10,6 +10,6 @@ import Foundation
 
 class ThemaColorManager {
     
-    let hex: String = "50E3C2"
+    let hex: String = "000000"
     
 }

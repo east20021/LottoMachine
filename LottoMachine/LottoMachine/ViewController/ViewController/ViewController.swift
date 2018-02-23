@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     private var count = [1,5,24,9,40,33]
     private var isTimerRunning = true
     
-    private var numberManager = NumberManager()
+    private var realmManager = RealmManager()
     private let themaColor = ThemaColorManager()
     
     private var num = ""
@@ -135,7 +135,7 @@ class ViewController: UIViewController {
             if savedNum != num {
                 let number = Number()
                 number.lottoNum = num
-                numberManager.save(objc: number)
+                realmManager .save(objc: number)
                 savedNum = num
                 num = ""
                 self.alert(title: "저장되었습니다", message:"" )

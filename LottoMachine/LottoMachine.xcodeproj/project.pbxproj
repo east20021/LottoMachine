@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		2B9716C7A36E0BF2A87E4F07 /* Pods_LottoMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A543AAD3BEACC2E87705B307 /* Pods_LottoMachine.framework */; };
 		9B465224203F094600E364FB /* ThemaColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B465223203F094600E364FB /* ThemaColorManager.swift */; };
+		9B46522B204048DB00E364FB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46522A204048DB00E364FB /* CollectionViewCell.swift */; };
 		9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A82201A00C500359D55 /* AppDelegate.swift */; };
 		9BA02A85201A00C500359D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA02A84201A00C500359D55 /* ViewController.swift */; };
 		9BA02A88201A00C500359D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A86201A00C500359D55 /* Main.storyboard */; };
 		9BA02A8A201A00C500359D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A89201A00C500359D55 /* Assets.xcassets */; };
 		9BA02A8D201A00C500359D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA02A8B201A00C500359D55 /* LaunchScreen.storyboard */; };
 		9BF283C6202F4F3900730DC6 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C5202F4F3900730DC6 /* Number.swift */; };
-		9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C7202F51B100730DC6 /* NumberManager.swift */; };
+		9BF283C8202F51B100730DC6 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283C7202F51B100730DC6 /* RealmManager.swift */; };
 		9BF283CB2031654400730DC6 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF283CA2031654400730DC6 /* ColorHex.swift */; };
 		9BF2840F203AD85E00730DC6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2840E203AD85E00730DC6 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		74C10D9F81A4DFCEDB27C49C /* Pods-LottoMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LottoMachine.release.xcconfig"; path = "Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine.release.xcconfig"; sourceTree = "<group>"; };
 		9B465223203F094600E364FB /* ThemaColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaColorManager.swift; sourceTree = "<group>"; };
+		9B46522A204048DB00E364FB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9BA02A7F201A00C500359D55 /* LottoMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LottoMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA02A82201A00C500359D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BA02A84201A00C500359D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		9BA02A8C201A00C500359D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BA02A8E201A00C500359D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF283C5202F4F3900730DC6 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
-		9BF283C7202F51B100730DC6 /* NumberManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberManager.swift; sourceTree = "<group>"; };
+		9BF283C7202F51B100730DC6 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9BF283CA2031654400730DC6 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		9BF2840E203AD85E00730DC6 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9DECEF3BDDF37B43D767F8F6 /* Pods-LottoMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LottoMachine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LottoMachine/Pods-LottoMachine.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF2840E203AD85E00730DC6 /* ListViewController.swift */,
+				9B4652272040465300E364FB /* New Group */,
 			);
 			path = ListViewController;
 			sourceTree = "<group>";
@@ -81,6 +84,14 @@
 				9BA02A84201A00C500359D55 /* ViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9B4652272040465300E364FB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				9B46522A204048DB00E364FB /* CollectionViewCell.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		9BA02A76201A00C500359D55 = {
@@ -128,7 +139,7 @@
 		9BF28411203AD9EC00730DC6 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				9BF283C7202F51B100730DC6 /* NumberManager.swift */,
+				9BF283C7202F51B100730DC6 /* RealmManager.swift */,
 				9B465223203F094600E364FB /* ThemaColorManager.swift */,
 			);
 			path = Manager;
@@ -284,9 +295,10 @@
 			files = (
 				9BA02A85201A00C500359D55 /* ViewController.swift in Sources */,
 				9BF283CB2031654400730DC6 /* ColorHex.swift in Sources */,
+				9B46522B204048DB00E364FB /* CollectionViewCell.swift in Sources */,
 				9BF2840F203AD85E00730DC6 /* ListViewController.swift in Sources */,
 				9BA02A83201A00C500359D55 /* AppDelegate.swift in Sources */,
-				9BF283C8202F51B100730DC6 /* NumberManager.swift in Sources */,
+				9BF283C8202F51B100730DC6 /* RealmManager.swift in Sources */,
 				9BF283C6202F4F3900730DC6 /* Number.swift in Sources */,
 				9B465224203F094600E364FB /* ThemaColorManager.swift in Sources */,
 			);
