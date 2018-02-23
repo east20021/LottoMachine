@@ -352,7 +352,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1w-iX-jd9">
                                                 <rect key="frame" x="2.6666666666666679" y="2.6666666666666679" width="50" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="58w-g5-31e"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="58w-g5-31e"/>
                                                     <constraint firstAttribute="height" constant="50" id="F5k-VC-DTA"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="back"/>

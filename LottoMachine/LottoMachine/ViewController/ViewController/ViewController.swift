@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     private let themaColor = ThemaColorManager()
     
     private var num = ""
+    private var savedNum = ""
     
     
     override func viewDidLoad() {
@@ -121,19 +122,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        for i in 0...5 {
-            if i == 5 {
-                num += String(drawedNumberArray[i])
-            } else {
-                num += String(drawedNumberArray[i])
-                num += "    "
+        if isTimerRunning != true {
+            for i in 0...5 {
+                if i == 5 {
+                    num += String(drawedNumberArray[i])
+                } else {
+                    num += String(drawedNumberArray[i])
+                    num += "    "
+                }
             }
+            
+            if savedNum != num {
+                let number = Number()
+                number.lottoNum = num
+                numberManager.save(objc: number)
+                savedNum = num
+                num = ""
+                self.alert(title: "저장되었습니다", message:"" )
+            } else {
+                self.alert(title: "이미 저장된 번호입니다.", message: "")
+                num = ""
+            }
+        } else {
+            self.alert(title: "stop을 누르고 저장해 주세요", message: "")
         }
-        let number = Number()
-        number.lottoNum = num
-        numberManager.save(objc: number)
-        num = ""
-        self.alert(title: "저장되었습니다", message:"" )
     }
 }
 
