@@ -96,7 +96,11 @@ class ViewController: UIViewController {
     func alert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
-        self.dismiss(animated: true, completion: nil)
+
+        let delay = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: delay){
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func drawAll(_ sender: Any) {
