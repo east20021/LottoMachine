@@ -97,10 +97,39 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
 
-        let delay = DispatchTime.now() + 1
+        let delay = DispatchTime.now() + 1 
         DispatchQueue.main.asyncAfter(deadline: delay){
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func saveNumberToString() {
+        for i in 0...5 {
+            if i == 5 {
+                num += String(drawedNumberArray[i])
+            } else {
+                num += String(drawedNumberArray[i])
+                num += "    "
+            }
+        }
+    }
+    
+    func checkOverlap() {
+        if savedNum != num {
+            let number = Number()
+            number.lottoNum = num
+            realmManager .save(objc: number)
+            savedNum = num
+            num = ""
+            self.alert(title: "저장되었습니다", message:"" )
+        } else {
+            self.alert(title: "이미 저장된 번호입니다.", message: "")
+            num = ""
+        }
+    }
+    
+    func outputRealmCount() -> Int {
+        return (realmManager.getNumbers(type: Number.self)?.count)!
     }
     
     @IBAction func drawAll(_ sender: Any) {
@@ -127,25 +156,11 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         if isTimerRunning != true {
-            for i in 0...5 {
-                if i == 5 {
-                    num += String(drawedNumberArray[i])
-                } else {
-                    num += String(drawedNumberArray[i])
-                    num += "    "
-                }
-            }
-            
-            if savedNum != num {
-                let number = Number()
-                number.lottoNum = num
-                realmManager .save(objc: number)
-                savedNum = num
-                num = ""
-                self.alert(title: "저장되었습니다", message:"" )
+            if outputRealmCount() > 4 {
+                self.alert(title: "최대 5개까지 저장이 가능합니다.", message: "")
             } else {
-                self.alert(title: "이미 저장된 번호입니다.", message: "")
-                num = ""
+                saveNumberToString()
+                checkOverlap()
             }
         } else {
             self.alert(title: "stop을 누르고 저장해 주세요", message: "")
